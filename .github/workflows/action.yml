@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-11-arm
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Boost
+        run: |
+          curl -O -L https://github.com/MarkusJx/prebuilt-boost/releases/download/1.89.0/boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
+          tar xfz boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
+          cd boost-1.89.0-windows-11-arm-msvc-shared-aarch64
