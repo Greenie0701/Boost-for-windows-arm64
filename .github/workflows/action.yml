@@ -9,7 +9,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Boost
+      - name: Boost for windows arm64
         run: |
           curl -O -L https://github.com/MarkusJx/prebuilt-boost/releases/download/1.89.0/boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
           tar xfz boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
