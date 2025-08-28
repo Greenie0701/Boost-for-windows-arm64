@@ -13,7 +13,7 @@ jobs:
         uses: jurplel/install-qt-action@v4
         with:
           version: '6.10.*'
-          host: 'windows'
+          host: 'windows_arm64'
           arch: 'win64_msvc2022_arm64'
           target: 'desktop'
           tools-only: 'false'
