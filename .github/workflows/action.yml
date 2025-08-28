@@ -8,10 +8,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Install Qt6
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.9.*'
+          host: 'windows'
+          arch: 'win64_msvc2022_arm64'
+          target: 'desktop'
+          tools-only: 'false'
+          modules: 'qt5compat qtimageformats qtshadertools'
+          tools: 'tools_cmake'
 
       - name: Boost for windows arm64
         run: |
-          curl -O -L https://github.com/MarkusJx/prebuilt-boost/releases/download/1.89.0/boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
-          tar xfz boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
-          cd boost
-          ls
+          windeployqt6.exe --version
+          # curl -O -L https://github.com/MarkusJx/prebuilt-boost/releases/download/1.89.0/boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
+          # tar xfz boost-1.89.0-windows-11-arm-msvc-shared-aarch64.tar.gz
+          # cd boost
+          # ls
